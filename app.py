@@ -24,6 +24,25 @@ if menu == "Model Persediaan":
         EOQ = np.sqrt((2 * D * S) / H)
         st.success(f"EOQ: {EOQ:.2f} unit")
 
+if st.button("Hitung EOQ"):
+    EOQ = np.sqrt((2 * D * S) / H)
+    st.success(f"EOQ: {EOQ:.2f} unit")
+
+    # Hitung biaya total untuk berbagai Q
+    Q_range = np.arange(100, 2*int(EOQ)+200, 100)
+    TC = (D / Q_range) * S + (Q_range / 2) * H
+
+    # Buat grafik
+    fig, ax = plt.subplots()
+    ax.plot(Q_range, TC, marker='o')
+    ax.axvline(EOQ, color='red', linestyle='--', label=f'EOQ: {EOQ:.0f}')
+    ax.set_title('Total Cost vs Order Quantity')
+    ax.set_xlabel('Order Quantity (Q)')
+    ax.set_ylabel('Total Cost')
+    ax.legend()
+    st.pyplot(fig)
+
+
 if menu == "Model Antrian":
     st.header("Model Antrian (M/M/1)")
     lam = st.number_input("Tingkat kedatangan (λ)", value=2.0)

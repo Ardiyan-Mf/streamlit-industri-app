@@ -44,7 +44,15 @@ menu = st.sidebar.radio("Menu", [
 # 1. Optimasi Produksi
 if menu == "📈 Optimasi Produksi":
     st.markdown("## 📈 Optimasi Produksi - Linear Programming")
-    st.info("Studi kasus: PT Sinar Terang memproduksi Blender dan Pemanggang Roti")
+    st.markdown("""
+    **Studi Kasus:**
+    PT Sinar Terang memproduksi dua produk unggulan: Blender (A) dan Pemanggang Roti (B). 
+    Masing-masing produk memerlukan waktu mesin untuk proses produksinya, yaitu 2 jam untuk Blender dan 3 jam untuk Pemanggang Roti. 
+    Dalam satu minggu, perusahaan hanya memiliki 100 jam mesin yang tersedia.
+
+    Keuntungan yang dihasilkan dari setiap unit Blender adalah Rp40.000, dan dari Pemanggang Roti adalah Rp60.000. 
+    Manajemen ingin mengetahui berapa unit masing-masing produk yang sebaiknya diproduksi agar **keuntungan maksimal** tercapai, tanpa melebihi waktu mesin yang tersedia.
+    """)
 
     col1, col2 = st.columns(2)
     with col1:
@@ -73,7 +81,14 @@ if menu == "📈 Optimasi Produksi":
 # 2. EOQ
 elif menu == "📦 Model EOQ":
     st.markdown("## 📦 Model Persediaan - EOQ")
-    st.info("Model EOQ digunakan untuk menentukan jumlah pemesanan optimal.")
+    st.markdown("""
+    **Studi Kasus:**
+    PT Sinar Terang mengelola gudang suku cadang blender dan pemanggang roti. 
+    Setiap tahun, permintaan suku cadang mencapai 10.000 unit. 
+    Biaya pemesanan sebesar Rp50.000 per kali pesan dan biaya penyimpanan per unit per tahun adalah Rp2.000. 
+
+    Berapa unit yang sebaiknya dipesan agar **biaya total persediaan minimum**?
+    """)
 
     col1, col2 = st.columns(2)
     with col1:
@@ -101,7 +116,11 @@ elif menu == "📦 Model EOQ":
 # 3. Antrian M/M/1
 elif menu == "⏳ Model Antrian (M/M/1)":
     st.markdown("## ⏳ Model Antrian M/M/1")
-    st.info("Digunakan untuk menganalisis sistem pelayanan satu server.")
+    st.markdown("""
+    **Studi Kasus:**
+    PT Sinar Terang memiliki pusat layanan pelanggan. Rata-rata terdapat 10 pelanggan datang setiap jam, dan seorang petugas mampu melayani 12 pelanggan per jam. 
+    Manajemen ingin mengetahui seberapa padat sistem antrian, rata-rata jumlah pelanggan dalam sistem, serta waktu tunggu pelanggan.
+    """)
 
     col1, col2 = st.columns(2)
     with col1:
@@ -130,7 +149,12 @@ elif menu == "⏳ Model Antrian (M/M/1)":
 # 4. Pertumbuhan Eksponensial
 elif menu == "🌱 Pertumbuhan Eksponensial":
     st.markdown("## 🌱 Pertumbuhan Eksponensial")
-    st.info("Model pertumbuhan untuk populasi atau investasi")
+    st.markdown("""
+    **Studi Kasus:**
+    PT Sinar Terang meluncurkan produk blender pintar yang terhubung ke internet. 
+    Awalnya terdapat 1.000 pengguna aktif. Diperkirakan pelanggan tumbuh dengan laju 10% per tahun.
+    Berapa jumlah pengguna setelah beberapa tahun?
+    """)
 
     P0 = st.number_input("📍 Nilai Awal (P₀)", value=1000)
     r = st.number_input("📈 Laju Pertumbuhan (r)", value=0.1)

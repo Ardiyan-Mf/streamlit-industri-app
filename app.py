@@ -37,4 +37,4 @@ if menu == "Model Antrian":
             st.error("μ harus lebih besar dari λ")
 
 if menu == "Prediksi Permintaan":
-    st.header("Prediksi Permintaan
+    st.header("Prediksi Permintaan")

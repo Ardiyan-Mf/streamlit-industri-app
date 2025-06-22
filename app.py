@@ -113,6 +113,15 @@ elif menu == "📦 Model EOQ":
         ax.legend()
         st.pyplot(fig)
 
+# Grafik tambahan dengan seaborn
+st.markdown("### 📊 Korelasi Kuantitas & Total Cost (Visual Tambahan)")
+df = pd.DataFrame({"Q": Q_range, "Total_Cost": TC})
+fig3, ax3 = plt.subplots()
+sns.regplot(data=df, x="Q", y="Total_Cost", ax=ax3, scatter_kws={"color": "#0055a5"}, line_kws={"color": "orange"})
+ax3.set_title("Regresi Total Cost terhadap Order Quantity")
+st.pyplot(fig3)
+
+
 # 3. Antrian M/M/1
 elif menu == "⏳ Model Antrian (M/M/1)":
     st.markdown("## ⏳ Model Antrian M/M/1")
